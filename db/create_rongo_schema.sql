@@ -11,7 +11,7 @@
  *  username: varchar, user identification
  *  password: varchar, 
  */
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
   id       SERIAL PRIMARY KEY,
   email    VARCHAR NOT NULL UNIQUE,
@@ -28,7 +28,7 @@ CREATE TABLE users (
  *  description: varchar
  *  duration: integer, plan duration in days 
  */
-DROP TABLE IF EXISTS subscription_plans;
+DROP TABLE IF EXISTS subscription_plans CASCADE;
 CREATE TABLE subscription_plans (
   id          SERIAL PRIMARY KEY,
   name        VARCHAR NOT NULL UNIQUE,
@@ -44,7 +44,7 @@ CREATE TABLE subscription_plans (
  *  title: varchar
  *  description: varchar
  */
-DROP TABLE IF EXISTS payment_methods;
+DROP TABLE IF EXISTS payment_methods CASCADE;
 CREATE TABLE payment_methods (
   id          SERIAL PRIMARY KEY,
   title       VARCHAR NOT NULL,
@@ -64,10 +64,13 @@ CREATE TABLE payment_methods (
  */
 DROP TABLE IF EXISTS user_subscriptions;
 CREATE TABLE user_subscriptions (
-  user_id           INTEGER NOT NULL REFERENCES rongo.users.id,
-  subscr_plan_id    INTEGER NOT NULL REFERENCES rongo.subscriptionplans.id,
-  payment_method_id INTEGER NOT NULL REFERENCES rongo.paymentmethods.id,
+  user_id           INTEGER NOT NULL,
+  subscr_plan_id    INTEGER NOT NULL,
+  payment_method_id INTEGER NOT NULL,
   paid BOOLEAN NOT NULL,
   start_date DATE NOT NULL,
-  end_date   DATE NOT NULL
+  end_date   DATE NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (subscr_plan_id) REFERENCES subscription_plans(id),
+  FOREIGN KEY (payment_method_id) REFERENCES payment_methods(id)
 );
