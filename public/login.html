@@ -1,10 +1,40 @@
 <!doctype html>
 <html>
 <head>
-    <link rel='stylesheet' href='/stylesheets/style.css'></link>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-nr-min.css"> -->
+    <link rel='stylesheet' href='stylesheets/pocketgrid.css'>
+    <link rel='stylesheet' href='stylesheets/style.css'>
 </head>
 <body lang="en">
+
+    <div class="block-group">
+      <a href="info.html" class="b1 block">
+        <img width="32" height="32" src="images/circle-question-mark.jpeg" id="question_mark_img"/>
+      </a>
+    </div>
+
+    <div class="block-group">
+      <a href="index.html">
+        <h2 class="b1 block" id="logo">rongo</h2>
+      </a>
+    </div>
+
+    <div class="block-group">
+      <form class="block b1">
+        <div class="block-group">
+          <input type="text" class="block" name="email" placeholder="e-mail"/>
+        </div>
+
+        <div class="block-group" action="/register">
+          <input type="text" class="block" name="password" placeholder="password"/>
+        </div>
+
+        <div class="block-group">
+          <input type="submit" class="block button" value="login"/>
+        </div>
+      </form>
+    </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
     </script>
