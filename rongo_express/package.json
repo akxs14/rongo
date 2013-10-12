@@ -1,0 +1,15 @@
+{
+  "name": "rongo",
+  "description": "rongo!",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "express": "*",
+    "sockjs": "*",
+    "hiredis": "*",
+    "redis": "*",
+    "mime": "*", 
+    "pg": "*"
+  }
+}

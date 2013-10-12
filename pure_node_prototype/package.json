@@ -1,0 +1,12 @@
+{
+  "name": "rongo",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*",
+    "sockjs": "*",
+    "hiredis": "*",
+    "redis": "*",
+    "mime": "*", 
+    "pg": "*"
+  }
+}
