@@ -63,16 +63,16 @@ body{
   margin-left: auto;
   margin-top: 4%;
   margin-bottom: 6%;
-  background-color: #4d4d4d;
+  background-color: #999999;
   color: #fff;
   font-size: 1.1em;
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
   text-decoration: none;
-  border-style: solid;
+/*  border-style: solid;
   border-color: #000;
-  border-width: 1px;
+  border-width: 1px;*/
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
