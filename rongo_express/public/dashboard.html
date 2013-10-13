@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='stylesheets/pocketgrid.css'>
+    <link rel='stylesheet' href='stylesheets/style.css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var screenHeight = $(window).height();
+        $.each($('.grid_cell'), function() {
+          $(this).height(screenHeight/2);
+        });
+      });
+    </script>
+</head>
+<body lang="en">
+
+  <div class="block-group">
+    <div class="b2 block grid_cell" id="msgbox_button">
+      <a class="cell_content" href="messagebox.html">
+        <img width="16" src="images/light-bulb-vector1.png"/>
+      </a>
+    </div>
+    <div class="b2 block grid_cell" id="contact_list_button">
+      <a class="cell_content" href="contact_list.html">
+        <img width="16"  src="images/light-bulb-vector1.png"/>
+      </a>
+    </div>
+  </div>
+  <div class="block-group">
+    <div class="b2 block grid_cell" id="compose_button">
+      <a class="cell_content" href="compose.html">
+        <img width="16"  src="images/light-bulb-vector1.png"/>
+      </a>        
+    </div>
+    <div class="b2 block grid_cell" id="profile_button">
+      <a class="cell_content" href="user_profile.html">
+        <img width="16"  src="images/light-bulb-vector1.png"/>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -115,3 +115,40 @@ input[type='submit'] {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+
+/*
+ *  dashboard page css
+ */
+.b2 {
+  width: 50%;
+}
+
+.grid_cell {
+  min-height: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: table;
+}
+
+.cell_content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#msgbox_button {
+  background-color: blue;
+}
+
+#contact_list_button {
+  background-color: yellow;
+}
+
+#compose_button {
+  background-color: red;
+}
+
+#profile_button {
+  background-color: green;
+}
+
