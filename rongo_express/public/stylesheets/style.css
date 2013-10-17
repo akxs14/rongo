@@ -137,18 +137,18 @@ input[type='submit'] {
 }
 
 #msgbox_button {
-  background-color: blue;
+  background-color: #ffddff;
 }
 
 #contact_list_button {
-  background-color: yellow;
+  background-color: #99ddff;
 }
 
 #compose_button {
-  background-color: red;
+  background-color: #ccffff;
 }
 
 #profile_button {
-  background-color: green;
+  background-color: #ffffcc;
 }
 
