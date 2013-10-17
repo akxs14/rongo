@@ -5,6 +5,7 @@ var path    = require('path');
 var mime    = require('mime');
 var pg      = require('pg');
 var redis   = require('redis');
+var querystring = require('querystring');
 
 var app = express();
 
@@ -24,8 +25,19 @@ app.get('/login', function(req, res) {
 });
 
 app.post('/signin', function(req, res) {
-  console.log(req.body)
-  res.redirect("/login");
+
+  var fullBody = '';
+  req.on('data', function(chunk) {
+    fullBody += chunk.toString();
+  });
+
+  req.on('end',function() {
+    var decodedBody = querystring.parse(fullBody);
+    var email = decodedBody['user[email]'];
+    var password = decodedBody['user[password]'];    
+  });
+
+  res.redirect("/dashboard");
 });
 
 app.get('/register', function(req, res) {
