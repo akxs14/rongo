@@ -9,6 +9,7 @@ var redis   = require('redis');
 var app = express();
 
 app.use(app.router);
+app.use(express.bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/styles",  express.static(__dirname + '/public/stylesheets'));
 app.use("/scripts", express.static(__dirname + '/public/javascripts'));
@@ -22,8 +23,17 @@ app.get('/login', function(req, res) {
   res.sendfile('public/login.html');
 });
 
+app.post('/signin', function(req, res) {
+  console.log(req.body)
+  res.redirect("/login");
+});
+
 app.get('/register', function(req, res) {
   res.sendfile('public/register.html');
+});
+
+app.get('/signup', function(req, res) {
+  
 });
 
 app.get('/dashboard', function(req, res) {
