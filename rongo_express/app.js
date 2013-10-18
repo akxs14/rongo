@@ -45,7 +45,21 @@ app.get('/register', function(req, res) {
 });
 
 app.get('/signup', function(req, res) {
-  
+
+  var fullBody = '';
+  req.on('data', function(chunk) {
+    fullBody += chunk.toString();
+  });
+
+  req.on('end',function() {
+    var decodedBody = querystring.parse(fullBody);
+    var email = decodedBody['user[email]'];
+    var password = decodedBody['user[password]'];
+    var repeat_password = decodedBody['user[repeat_password]'];
+  });
+
+  res.redirect("/");
+
 });
 
 app.get('/dashboard', function(req, res) {
