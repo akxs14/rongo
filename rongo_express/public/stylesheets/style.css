@@ -70,9 +70,6 @@ body{
   vertical-align: middle;
   line-height: 50px;
   text-decoration: none;
-/*  border-style: solid;
-  border-color: #000;
-  border-width: 1px;*/
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -137,18 +134,22 @@ input[type='submit'] {
 }
 
 #msgbox_button {
-  background-color: #ffddff;
+/*  background-color: #ffddff;*/
+  border-right: 1px solid #CC3300;
+  border-bottom: 1px solid #CC3300;
 }
 
 #contact_list_button {
-  background-color: #99ddff;
+  /*background-color: #99ddff;*/
+  border-bottom: 1px solid #CC3300;
 }
 
 #compose_button {
-  background-color: #ccffff;
+  /*background-color: #ccffff;*/
+  border-right: 1px solid #CC3300;
 }
 
 #profile_button {
-  background-color: #ffffcc;
+  /*border-top: 1px solid #CC3300;*/
 }
 
