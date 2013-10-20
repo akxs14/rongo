@@ -1,7 +1,6 @@
 /*
  * Module dependencies.
  */
-
 var express = require('express');
 var routes = require('./routes');
 var user = require('./modules/user');
@@ -68,7 +67,7 @@ app.get('/register', function(req, res) {
   res.sendfile('public/register.html');
 });
 
-app.get('/signup', function(req, res) {
+app.post('/signup', function(req, res) {
 
   var fullBody = '';
   req.on('data', function(chunk) {
@@ -81,6 +80,8 @@ app.get('/signup', function(req, res) {
     var password = decodedBody['user[password]'];
     var repeat_password = decodedBody['user[repeat_password]'];
 
+    var new_user = new user();
+    new_user.create(email, password);
   });
 
   res.redirect("/");
