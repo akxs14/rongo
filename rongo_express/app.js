@@ -1,17 +1,15 @@
-
-/**
+/*
  * Module dependencies.
  */
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
+var user = require('./modules/user');
 var http = require('http');
 var path = require('path');
-var fs      = require('fs');
-var mime    = require('mime');
-var pg      = require('pg');
-var redis   = require('redis');
+var fs   = require('fs');
+var mime = require('mime');
+var redis = require('redis');
 var querystring = require('querystring');
 
 var app = express();
@@ -82,6 +80,7 @@ app.get('/signup', function(req, res) {
     var email = decodedBody['user[email]'];
     var password = decodedBody['user[password]'];
     var repeat_password = decodedBody['user[repeat_password]'];
+
   });
 
   res.redirect("/");

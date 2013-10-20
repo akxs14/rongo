@@ -1,12 +1,10 @@
-body{
+body {
   font-family: arial, sans-serif;
   margin: 0 0 0 0;
 }
-
 .b1 {
   width: 100%;
 }
-
 #question_mark_img {
   float: right;
   margin-right: 3%;
@@ -14,7 +12,6 @@ body{
   width: 24px;
   height: 24px;
 }
-
 #register_logo {
   font-size: 1.8em;
   margin-top: 13%;
@@ -24,7 +21,6 @@ body{
   margin-right: auto;
   text-align: center;
 }
-
 #login_logo {
   font-size: 1.8em;
   margin-top: 23.5%;
@@ -34,7 +30,6 @@ body{
   margin-right: auto;
   text-align: center;
 }
-
 #logo {
   font-size: 1.8em;
   margin-top: 13%;
@@ -44,17 +39,15 @@ body{
   margin-right: auto;
   text-align: center;
 }
-
 #index_text {
   color: #de3800;
-  margin-bottom: 25%; 
+  margin-bottom: 25%;
   font-size: 1.4em;
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
-
 .button {
   width: 84%;
   height: 45px;
@@ -74,25 +67,23 @@ body{
   -moz-border-radius: 3px;
   border-radius: 3px;
   /* iOS specific */
-  -webkit-tap-highlight-color: rgba(0,0,0,0)
-}
 
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 .button:active {
   background-color: #CC3300;
 }
-
 a {
   color: black;
 }
-
 form {
   width: 84%;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
-input[type='text'], input[type='password'] {
+input[type='text'],
+input[type='password'] {
   min-height: 50px;
   font-size: 1.5em;
   margin-top: 10%;
@@ -102,7 +93,6 @@ input[type='text'], input[type='password'] {
   padding-left: 5px;
   color: #de3800;
 }
-
 input[type='submit'] {
   font-size: 1.1em;
   margin-top: 20%;
@@ -112,14 +102,12 @@ input[type='submit'] {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-
 /*
  *  dashboard page css
  */
 .b2 {
   width: 50%;
 }
-
 .grid_cell {
   min-height: 10px;
   margin-left: auto;
@@ -127,28 +115,27 @@ input[type='submit'] {
   text-align: center;
   display: table;
 }
-
 .cell_content {
   display: table-cell;
   vertical-align: middle;
 }
-
 #msgbox_button {
-/*  background-color: #ffddff;*/
+  /*  background-color: #ffddff;*/
+
   border-right: 1px solid #CC3300;
   border-bottom: 1px solid #CC3300;
 }
-
 #contact_list_button {
   /*background-color: #99ddff;*/
+
   border-bottom: 1px solid #CC3300;
 }
-
 #compose_button {
   /*background-color: #ccffff;*/
+
   border-right: 1px solid #CC3300;
 }
-
 #profile_button {
   /*border-top: 1px solid #CC3300;*/
+
 }
