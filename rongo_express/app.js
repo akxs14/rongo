@@ -76,9 +76,9 @@ app.post('/signup', function(req, res) {
 
   req.on('end',function() {
     var decodedBody = querystring.parse(fullBody);
-    var email = decodedBody['user[email]'];
-    var password = decodedBody['user[password]'];
-    var repeat_password = decodedBody['user[repeat_password]'];
+    var email = decodedBody['email'];
+    var password = decodedBody['password'];
+    var repeat_password = decodedBody['repeat_password'];
 
     var new_user = new user();
     new_user.create(email, password);
