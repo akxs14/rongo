@@ -6,27 +6,21 @@
 var User = function() 
 {
   this.pg = require('pg');
-  this.connString = "postgres://makis:makis@localhost/postgres";
+  this.connString = "postgres://makis:makis@localhost/rongo";
 }
 
 User.prototype.create = function(email, password) 
 {
-  console.log("kou kou!: " + email + "," + password);
-  // this.pg.connect(this.connString, function(err, client, done) {
-  //   if(err) {
-  //     return console.error('error fetching client from pool', err);
-  //   }
-  //   client.query("INSERT IN users(email, password) " +
-  //     "VALUES(" + email + "," + password + ")",
-  //     function(err, result) {
-  //       done();
-
-  //       if(err) {
-  //         return console.error('error running query', err);
-  //       }
-  //       console.log(result.rows[0].number);
-  //     });
-  // });
+  this.pg.connect(this.connString, function(err, client, done) {
+    if(err) {
+      return console.error('error fetching client from pool', err);
+    }
+    query = "INSERT INTO users(email, username, password) " + "VALUES('" + email + "','moula','" + password + "')";
+    client.query(query, function(err, result) {
+      done();
+      if(err) { return console.error('error running query', err); }
+     });
+  });
 }
 
 User.prototype.delete = function(email)
@@ -41,8 +35,7 @@ User.prototype.delete = function(email)
         if(err) {
           return console.error('error running query', err);
         }
-        console.log(result.rows[0]);
-      });
+       });
   });
 }
 
