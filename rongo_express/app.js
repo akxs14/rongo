@@ -105,6 +105,22 @@ app.get('/dashboard',authManager.requiredAuthentication, function(req, res) {
   res.sendfile('public/dashboard.html');
 });
 
+app.get('/messagebox',authManager.requiredAuthentication, function(req, res) {
+  res.sendfile('public/messagebox.html');
+});
+
+app.get('/userprofile',authManager.requiredAuthentication, function(req, res) {
+  res.sendfile('public/user_profile.html');
+});
+
+app.get('/contacts',authManager.requiredAuthentication, function(req, res) {
+  res.sendfile('public/contact_list.html');
+});
+
+app.get('/compose',authManager.requiredAuthentication, function(req, res) {
+  res.sendfile('public/compose.html');
+});
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
