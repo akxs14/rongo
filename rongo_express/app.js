@@ -15,14 +15,14 @@ var authManager = require('./modules/auth_manager');
 var app = express();
 
 // all environments
+app.use(express.cookieParser());
+app.use(express.session({secret:"secret"}));
+app.use(app.router);
 app.set('port', process.env.PORT || 3000);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieParser());
-app.use(express.session({secret:'absd'}));
-app.use(app.router);
 app.use(require('less-middleware')({ src: __dirname + '/public' }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("styles",  express.static(__dirname + '/public/stylesheets'));
@@ -58,7 +58,6 @@ app.post('/signin', function(req, res) {
     var decodedBody = querystring.parse(fullBody);
     var email = decodedBody['user[email]'];
     var password = decodedBody['user[password]'];    
-
     var new_user = new user();
     var auth_result = new_user.login(email, password, 
       function(auth_result, user) {
@@ -69,7 +68,7 @@ app.post('/signin', function(req, res) {
         }
         else
           res.redirect("/");
-      });   
+      });
   });
 });
 
@@ -78,6 +77,8 @@ app.get('/register', function(req, res) {
 });
 
 app.post('/signup', function(req, res) {
+
+  console.log("eimai mesa");
 
   var fullBody = '';
   req.on('data', function(chunk) {
