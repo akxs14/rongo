@@ -58,9 +58,17 @@ app.post('/signin', function(req, res) {
     var decodedBody = querystring.parse(fullBody);
     var email = decodedBody['user[email]'];
     var password = decodedBody['user[password]'];    
-  });
 
-  res.redirect("/dashboard");
+    var new_user = new user();
+    var auth_result = new_user.login(email, password, 
+      function(auth_result) {
+        if( auth_result == true)
+          res.redirect("/dashboard");
+        else
+          res.redirect("/");
+      });   
+  });
+  
 });
 
 app.get('/register', function(req, res) {
@@ -77,11 +85,12 @@ app.post('/signup', function(req, res) {
   req.on('end',function() {
     var decodedBody = querystring.parse(fullBody);
     var email = decodedBody['email'];
+    var username = decodedBody['username'];    
     var password = decodedBody['password'];
     var repeat_password = decodedBody['repeat_password'];
 
     var new_user = new user();
-    new_user.create(email, password);
+    new_user.create(email, username, password);
   });
 
   res.redirect("/");

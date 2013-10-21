@@ -15,7 +15,7 @@ body {
 #register_logo {
   font-size: 1.8em;
   margin-top: 13%;
-  margin-bottom: 10%;
+  margin-bottom: 4%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -23,7 +23,7 @@ body {
 }
 #login_logo {
   font-size: 1.8em;
-  margin-top: 23.5%;
+  margin-top: 23%;
   margin-bottom: 10%;
   display: block;
   margin-left: auto;
@@ -56,13 +56,16 @@ body {
   margin-left: auto;
   margin-top: 4%;
   margin-bottom: 6%;
-  background-color: #999999;
+  background-color: #4d4d4d;
   color: #fff;
   font-size: 1.1em;
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
   text-decoration: none;
+  border-style: solid;
+  border-color: #000;
+  border-width: 1px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -101,41 +104,4 @@ input[type='submit'] {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-}
-/*
- *  dashboard page css
- */
-.b2 {
-  width: 50%;
-}
-.grid_cell {
-  min-height: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  display: table;
-}
-.cell_content {
-  display: table-cell;
-  vertical-align: middle;
-}
-#msgbox_button {
-  /*  background-color: #ffddff;*/
-
-  border-right: 1px solid #CC3300;
-  border-bottom: 1px solid #CC3300;
-}
-#contact_list_button {
-  /*background-color: #99ddff;*/
-
-  border-bottom: 1px solid #CC3300;
-}
-#compose_button {
-  /*background-color: #ccffff;*/
-
-  border-right: 1px solid #CC3300;
-}
-#profile_button {
-  /*border-top: 1px solid #CC3300;*/
-
 }
