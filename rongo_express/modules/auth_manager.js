@@ -1,8 +1,8 @@
 var requiredAuthentication = function(req, res, next) {
-    if (req.mySession.user) {
+    if (req.session.user) {
         next();
     } else {
-        req.mySession.error = 'Access denied!';
+        req.session.error = 'Access denied!';
         res.redirect('/login');
     }
 }

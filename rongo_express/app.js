@@ -59,6 +59,7 @@ app.post('/signin', function(req, res) {
     var email = decodedBody['user[email]'];
     var password = decodedBody['user[password]'];    
     var new_user = new user();
+ 
     var auth_result = new_user.login(email, password, 
       function(auth_result, user) {
         if( auth_result == true) {
@@ -100,7 +101,7 @@ app.post('/signup', function(req, res) {
 
 });
 
-app.get('/dashboard',  function(req, res) {
+app.get('/dashboard',authManager.requiredAuthentication, function(req, res) {
   res.sendfile('public/dashboard.html');
 });
 
