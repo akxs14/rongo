@@ -105,3 +105,25 @@ input[type='submit'] {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+.grid_cell {
+  min-height: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: table;
+}
+.cell_content {
+  display: table-cell;
+  vertical-align: middle;
+}
+#msgbox_button {
+  border-right: 1px solid #CC3300;
+  border-bottom: 1px solid #CC3300;
+}
+#contact_list_button {
+  border-bottom: 1px solid #CC3300;
+}
+#compose_button {
+  border-right: 1px solid #CC3300;
+}
