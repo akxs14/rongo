@@ -53,7 +53,7 @@ User.prototype.login = function(email, password, callback)
       if(err) {
         return console.error('error running query', err);
       }
-      callback(result.rows[0]['count'] == 1);
+      callback(result.rows[0]['count'] == 1, email);
     });
   });
 }

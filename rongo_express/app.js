@@ -10,18 +10,18 @@ var fs   = require('fs');
 var mime = require('mime');
 var redis = require('redis');
 var querystring = require('querystring');
+var authManager = require('./modules/auth_manager');
 
 var app = express();
 
 // all environments
-app.use(app.router);
 app.set('port', process.env.PORT || 3000);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
-app.use(express.session());
+app.use(express.cookieParser());
+app.use(express.session({secret:'absd'}));
 app.use(app.router);
 app.use(require('less-middleware')({ src: __dirname + '/public' }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -61,14 +61,16 @@ app.post('/signin', function(req, res) {
 
     var new_user = new user();
     var auth_result = new_user.login(email, password, 
-      function(auth_result) {
-        if( auth_result == true)
+      function(auth_result, user) {
+        if( auth_result == true) {
+          req.session.user = user;
+          req.session.password = password;
           res.redirect("/dashboard");
+        }
         else
           res.redirect("/");
       });   
   });
-  
 });
 
 app.get('/register', function(req, res) {
@@ -97,7 +99,7 @@ app.post('/signup', function(req, res) {
 
 });
 
-app.get('/dashboard', function(req, res) {
+app.get('/dashboard',  function(req, res) {
   res.sendfile('public/dashboard.html');
 });
 
